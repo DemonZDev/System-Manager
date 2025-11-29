@@ -1,6 +1,6 @@
-# VPS Manager
+# System Manager
 
-VPS Manager is a modular, OS-aware automation framework for controlling and provisioning VPS environments. It provides tools to install, delete, and reinstall system components with automatic detection of installed packages, version-aware logic, and multiple runtime output modes.
+Syetem Manager is a modular, OS-aware automation framework for controlling and provisioning VPS environments. It provides tools to install, delete, and reinstall system components with automatic detection of installed packages, version-aware logic, and multiple runtime output modes.
 
 ---
 
@@ -20,12 +20,12 @@ VPS Manager is a modular, OS-aware automation framework for controlling and prov
 
 | Command                     | Behavior |
 |----------------------------|----------|
-| `bash vps-manager.sh`      | Normal execution mode |
-| `bash vps-manager.sh --debug` | Full verbose debugging with command traces |
-| `bash vps-manager.sh --silent` | Only outputs success, warning, and error events |
+| `bash system-manager.sh`      | Normal execution mode |
+| `bash system-manager.sh --debug` | Full verbose debugging with command traces |
+| `bash system-manager.sh --silent` | Only outputs success, warning, and error events |
 
 ---
 
 ## Menu System
 
-After launch, VPS Manager presents the main menu:
+After launch, System Manager presents the main menu:
