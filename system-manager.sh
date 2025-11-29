@@ -22,7 +22,7 @@ SCRIPT_PATH="${BASH_SOURCE[0]}"
 SCRIPT_DIR="$(cd "$(dirname "$SCRIPT_PATH")" && pwd)"
 SCRIPTS_DIR="${SCRIPT_DIR}/scripts"
 UTILS_DIR="${SCRIPTS_DIR}/utils"
-OS_DIR="${SCRIPTS_DIR}/OS"
+OS_DIR="${SCRIPTS_DIR}/os"
 
 #######################################
 # Minimal fallback echo for early errors
@@ -64,16 +64,16 @@ EOF
 # Load core utils
 #######################################
 
-LOGGING_MANAGER="${UTILS_DIR}/logging-manager.sh"
+LOGIN_MANAGER="${UTILS_DIR}/login-manager.sh"
 OS_MANAGER="${UTILS_DIR}/os-manager.sh"
 PROFILE_MANAGER="${UTILS_DIR}/profile-manager.sh"
 
-_require_file "$LOGGING_MANAGER"
+_require_file "$LOGIN_MANAGER"
 _require_file "$OS_MANAGER"
 # profile-manager is optional for now, but we try to load it if present
 
 # shellcheck source=/dev/null
-. "$LOGGING_MANAGER"
+. "$LOGIN_MANAGER"
 # shellcheck source=/dev/null
 . "$OS_MANAGER"
 if [[ -f "$PROFILE_MANAGER" ]]; then
