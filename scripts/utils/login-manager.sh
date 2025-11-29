@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Logging Manager
+# Login Manager
 #
 
 set -euo pipefail
