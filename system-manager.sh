@@ -86,6 +86,7 @@ fi
 #######################################
 
 GLOBAL_ARGS=("$@")
+DRY_RUN=false
 
 parse_global_args() {
   local arg
@@ -94,6 +95,9 @@ parse_global_args() {
       --help|-h)
         print_usage
         exit 0
+        ;;
+      --dry-run)
+        DRY_RUN=true
         ;;
       --debug|--silent)
         # already handled by logging-manager's parse_flags
@@ -124,6 +128,11 @@ require_root_or_sudo() {
     fi
   else
     export SUDO=""
+  fi
+
+  if [ "$DRY_RUN" = true ]; then
+    log_info "--- DRY RUN MODE ---"
+    export SUDO="echo sudo"
   fi
 }
 
